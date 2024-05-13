@@ -1,5 +1,5 @@
 const { Boom } = '@hapi/boom'
-const Baileys {
+const { Baileys,
   DisconnectReason,
   delay,
   useMultiFileAuthState
