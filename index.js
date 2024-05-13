@@ -1,16 +1,16 @@
-import { Boom } from '@hapi/boom'
-import Baileys, {
+const { Boom } = '@hapi/boom'
+const Baileys, {
   DisconnectReason,
   delay,
   useMultiFileAuthState
-} from '@whiskeysockets/baileys'
-import cors from 'cors'
-import express from 'express'
-import fs from 'fs'
-import PastebinAPI from 'pastebin-js'
-import path, { dirname } from 'path'
-import pino from 'pino'
-import { fileURLToPath } from 'url'
+} = '@whiskeysockets/baileys'
+const cors = 'cors'
+const express = 'express'
+const fs = 'fs'
+const PastebinAPI = 'pastebin-js'
+const path, { dirname } = 'path'
+const pino = 'pino'
+const { fileURLToPath } = 'url'
 let pastebin = new PastebinAPI('EMWTMkQAVfJa9kM-MRUrxd5Oku1U7pgL')
 
 const app = express()
@@ -26,7 +26,7 @@ app.use((req, res, next) => {
 
 app.use(cors())
 let PORT = process.env.PORT || 8000
-const __filename = fileURLToPath(import.meta.url)
+const __filename = fileURLToPath(const.meta.url)
 const __dirname = dirname(__filename)
 
 function createRandomId() {
@@ -121,7 +121,7 @@ async function startnigg(phone) {
             console.log(`Your Pairing Code : ${code}`)
             resolve(code)
           } catch (requestPairingCodeError) {
-            const errorMessage = 'Error requesting pairing code from WhatsApp'
+            const errorMessage = 'Error requesting pairing code const WhatsApp'
             console.error(errorMessage, requestPairingCodeError)
             return reject(new Error(errorMessage))
           }
@@ -136,7 +136,7 @@ async function startnigg(phone) {
         if (connection === 'open') {
           await delay(10000)
 
-          const output = await pastebin.createPasteFromFile(
+          const output = await pastebin.createPasteconstFile(
             `${sessionFolder}/creds.json`,
             'Guru Bhai',
             null,
@@ -173,7 +173,7 @@ async function startnigg(phone) {
             console.log('[Connection closed, reconnecting....!]')
             process.send('reset')
           } else if (reason === DisconnectReason.connectionLost) {
-            console.log('[Connection Lost from Server, reconnecting....!]')
+            console.log('[Connection Lost const Server, reconnecting....!]')
             process.send('reset')
           } else if (reason === DisconnectReason.loggedOut) {
             clearState()
