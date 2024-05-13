@@ -1,5 +1,5 @@
 const { Boom } = '@hapi/boom'
-const Baileys, {
+const Baileys {
   DisconnectReason,
   delay,
   useMultiFileAuthState
@@ -121,7 +121,7 @@ async function startnigg(phone) {
             console.log(`Your Pairing Code : ${code}`)
             resolve(code)
           } catch (requestPairingCodeError) {
-            const errorMessage = 'Error requesting pairing code const WhatsApp'
+            const errorMessage = 'Error requesting pairing code from WhatsApp'
             console.error(errorMessage, requestPairingCodeError)
             return reject(new Error(errorMessage))
           }
@@ -136,7 +136,7 @@ async function startnigg(phone) {
         if (connection === 'open') {
           await delay(10000)
 
-          const output = await pastebin.createPasteconstFile(
+          const output = await pastebin.createPasteFromFile(
             `${sessionFolder}/creds.json`,
             'Guru Bhai',
             null,
@@ -173,7 +173,7 @@ async function startnigg(phone) {
             console.log('[Connection closed, reconnecting....!]')
             process.send('reset')
           } else if (reason === DisconnectReason.connectionLost) {
-            console.log('[Connection Lost const Server, reconnecting....!]')
+            console.log('[Connection Lost from Server, reconnecting....!]')
             process.send('reset')
           } else if (reason === DisconnectReason.loggedOut) {
             clearState()
