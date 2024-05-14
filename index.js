@@ -26,7 +26,7 @@ app.use((req, res, next) => {
 
 app.use(cors())
 let PORT = process.env.PORT || 8000
-const __filename1 = fileURLToPath(const.meta.url)
+const __filename1 = fileURLToPath(from.meta.url)
 const __dirname = dirname(__filename1)
 
 function createRandomId() {
