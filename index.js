@@ -32,7 +32,7 @@ const msgRetryCounterCache = new NodeCache();
 const rl = readline.createInterface({
 	input: process.stdin,
 	output: process.stdout,
-});
+
 const question = text => new Promise(resolve => rl.question(text, resolve));
 
 const P = require("pino")({
@@ -85,5 +85,6 @@ async function start() {
 	});
 	return sock;
 }
-
+}); 
 start();
+  
